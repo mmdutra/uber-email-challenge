@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Uber\Domain\UseCases;
+namespace App\Uber\Domain;
 
 use Throwable;
 

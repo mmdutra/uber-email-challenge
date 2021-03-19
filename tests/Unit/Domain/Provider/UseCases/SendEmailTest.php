@@ -6,7 +6,7 @@ namespace App\Tests\Unit\Domain\Provider\UseCases;
 
 use App\Uber\Domain\MailGunProvider;
 use App\Uber\Domain\SendGridProvider;
-use App\Uber\Domain\UseCases\AllProvidersDown;
+use App\Uber\Domain\AllProvidersDown;
 use App\Uber\Domain\UseCases\SendEmail;
 use PHPUnit\Framework\TestCase;
 

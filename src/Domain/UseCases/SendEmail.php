@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Uber\Domain\UseCases;
 
+use App\Uber\Domain\AllProvidersDown;
 use App\Uber\Domain\Provider;
 
 class SendEmail
