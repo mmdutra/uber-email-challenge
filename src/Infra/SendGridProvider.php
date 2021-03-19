@@ -2,7 +2,9 @@
 
 declare(strict_types=1);
 
-namespace App\Uber\Domain;
+namespace App\Uber\Infra;
+
+use App\Uber\Domain\Provider;
 
 class SendGridProvider implements Provider
 {

@@ -3,8 +3,8 @@
 return [
     \App\Uber\Domain\UseCases\SendEmail::class => function ($c) {
         return new \App\Uber\Domain\UseCases\SendEmail([
-                new \App\Uber\Domain\MailGunProvider(),
-                new \App\Uber\Domain\SendGridProvider()
+                new \App\Uber\Infra\MailGunProvider(),
+                new \App\Uber\Infra\SendGridProvider()
             ]
         );
     },

@@ -4,8 +4,7 @@ declare(strict_types=1);
 
 namespace App\Tests\Unit\Domain\Provider\UseCases;
 
-use App\Uber\Domain\MailGunProvider;
-use App\Uber\Domain\SendGridProvider;
+use App\Uber\Domain\Provider;
 use App\Uber\Domain\AllProvidersDown;
 use App\Uber\Domain\UseCases\SendEmail;
 use PHPUnit\Framework\TestCase;
@@ -18,8 +17,8 @@ class SendEmailTest extends TestCase
 
     protected function setUp(): void
     {
-        $this->mailGunMock = $this->createMock(MailGunProvider::class);
-        $this->sendGridMock = $this->createMock(SendGridProvider::class);
+        $this->mailGunMock = $this->createMock(Provider::class);
+        $this->sendGridMock = $this->createMock(Provider::class);
         
         $this->emailData = [
             'from' => 'test@example.com',
