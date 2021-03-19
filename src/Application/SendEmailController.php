@@ -24,13 +24,14 @@ class SendEmailController
         try {
             $this->sendEmail->execute((array) json_decode($data));
         
-            $responseBody = ['body' => 'E-mail enviado com sucesso!'];
+            $responseBody = ['status' => 200, 'body' => 'E-mail enviado com sucesso!'];
         
             $response->getBody()->write(json_encode($responseBody));
             return $response->withStatus(200)->withHeader('Content-Type', 'application/json; charset=utf-8');
         } catch (\Exception $exception) {
-            $response->getBody()->write($exception->getMessage());
-            return $response->withStatus(422)->withHeader('Content-Type', 'application/json; charset=utf-8');
+            $responseBody = ['status' => 500, 'error' => $exception->getMessage()];
+            $response->getBody()->write(json_encode($responseBody));
+            return $response->withStatus(500)->withHeader('Content-Type', 'application/json; charset=utf-8');
         }
     }
 }
